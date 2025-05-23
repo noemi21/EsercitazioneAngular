@@ -1,0 +1,24 @@
+.course-item{
+    background-color: rgb(242, 242, 242);
+    border: 1px solid black;
+    padding: 1 rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+h3{
+    margin: 0 0 0.5rem 0;
+}
+
+button{
+    background-color: #2b00ff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #1a00cc;
+}
