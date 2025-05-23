@@ -1,0 +1,14 @@
+ <div class="card h-100">
+       <img [ngStyle]="{'border': corso.soldOut ? '2px solid red' : 'none'}" [src]="corso.img" [alt]="corso.title" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title"><strong>{{ corso.title }}</strong></h5>
+          <p>{{ corso.description }}</p>
+          <p>{{ corso.date | date:'longDate' }}</p>
+          <p>{{ corso.price | currency:'EUR'}}</p>
+          <div *ngIf="corso.price > 50 && corso.soldOut == false" class="special-offer">Offerta speciale!</div>
+          <p [hidden]="!corso.soldOut">Sold Out</p>
+        </div>
+        <div class="card-body">
+          <button (click)="viewDetails(corso)">Visualizza dettagli</button>
+        </div>
+    </div>

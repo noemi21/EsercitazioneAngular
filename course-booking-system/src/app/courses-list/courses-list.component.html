@@ -1,11 +1,5 @@
-<h2>{{ titolo }}</h2>
-<div class="course-item" *ngFor="let corso of courses">
-  <h3>{{ corso.title }}</h3>
-  <img [src]="corso.img" [alt]="corso.title" style="height:5%; width:5%" />
-  <p>{{ corso.description }}</p>
-  <p>{{ corso.duration }}</p>
-  <p>{{ corso.price }}</p>
-  <p [hidden]="!corso.soldOut">Sold Out</p>
-  <button (click)="viewDetails(corso)">Visualizza dettagli</button>
+<div class="row gx-3">
+  <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let corso of courses">
+   
+  </div>
 </div>
-
