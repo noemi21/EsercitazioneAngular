@@ -9,6 +9,8 @@
           <p [hidden]="!corso.soldOut">Sold Out</p>
         </div>
         <div class="card-body">
-          <button (click)="viewDetails(corso)">Visualizza dettagli</button>
+          <button [disabled]="corso.soldOut" (click)="onCourseBooked()">Prenota corso</button>
+          <button (click)="onAddToWishlist()">Wishlist</button>
+
         </div>
     </div>

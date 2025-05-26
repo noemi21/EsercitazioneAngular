@@ -1,5 +1,21 @@
 <div class="row gx-3">
+<h2 class="mb-4 text-primary">📌 Wishlist</h2>
+
+<div class="row gx-3 gy-2">
+  <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let corso of wishlist">
+    <div class="border rounded p-3 shadow-sm bg-light">
+      <h5 class="mb-0 text-dark">{{ corso.title }}</h5>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Courses -->
   <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let corso of courses">
-   
+    <app-course-card 
+      [corso]="corso" 
+      (courseBooked)="onCourseBooked($event)" 
+      (wishlistAdded)="onWishlistAdded($event)">
+    </app-course-card>
   </div>
 </div>

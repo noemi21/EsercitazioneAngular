@@ -23,6 +23,10 @@ button:hover{
     background-color: #1a00cc;
 }
 
+button:disabled{
+    background-color: #cc0000;
+}
+
 .special-offer{
     color: green;
     font-weight: bold;
