@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <app-courses-list></app-courses-list>
-</body>
-</html>
+<nav>
+  <a routerLink="/courses" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}"> Couses </a>
+  <a routerLink="/courses/1" routerLinkActive="active"> Couse Details</a>
+</nav>
+<router-outlet></router-outlet>

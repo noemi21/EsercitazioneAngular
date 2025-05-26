@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseCardComponent } from '../course-card/course-card.component';
+import { Course } from '../models/course.model';
+import { CourseService } from '../services/course.service';
 
 @Component({
   selector: 'app-courses-list',
@@ -11,13 +13,24 @@ import { CourseCardComponent } from '../course-card/course-card.component';
 })
 export class CoursesListComponent {
   titolo: string = 'Corsi disponibili';
-  wishlist: any[] = [];
-  courses = [
-    {id: 1, title: 'Corso di Angular', description: 'Impara le basi di Angular', date: '2023-03-23', price: 200, soldOut: false, img:'foto1.png' },
-    {id: 2, title: 'Corso di React', description: 'Impara le basi di React', date: '2022-02-23', price: 200, soldOut: true, img:'foto2.jpeg' }
-  ];
+  wishlist: Course[] = [];
+  courses: Course[] = [];
 
-  onCourseBooked(course: any): void {
+
+  constructor(private courseService: CourseService) {
+  }
+  ngOnInit(): void {
+    this.courseService.getCourses().subscribe({
+      next: (data: Course[]) => {
+        this.courses = data;
+      },
+      error: (err: any) => {
+        console.error('Errore nel recupero dei corsi:', err);
+      }
+    });
+  }
+
+onCourseBooked(course: Course): void {
     console.log(`il genitore ha saputo della prenotazione:` ,course.title);
 }
 

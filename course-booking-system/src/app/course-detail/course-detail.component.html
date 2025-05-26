@@ -1,0 +1,11 @@
+<h2>dettagli del corso</h2>
+
+<button (click)="loadCourseById(1)">load course 1</button>
+<hr/>
+<div *ngIf="course">
+  <h3>{{ course.title }}</h3>
+  <p>{{ course.description }}</p>
+  <p>Price: {{ course.price | currency }}</p>
+ <p>{{course.date | date.'longDate'}}</p>
+  <img [src]="course.img" [alt]="course.title" width="100"/>
+</div>
